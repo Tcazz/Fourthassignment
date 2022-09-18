@@ -1,0 +1,133 @@
+#include "stdio.h"
+#include "stdlib.h"
+#include"string.h"
+struct member{
+    int id;
+    char username[20];
+    int password;
+    int age;
+    int amount;
+    char location[30];
+
+};
+
+void insert(){
+ struct member *s;
+    FILE *fptr;
+
+    int n, i, j;
+    printf("Enter number of members::");
+    scanf("%d",&n);
+    s= (struct member*)malloc(sizeof(struct member));
+    fptr=fopen("memberrecord.txt","w");
+    for(i==0; i<n; i++ ){
+        printf("Enter id::");
+        scanf("%d", &s[i].id);
+        printf("Enter username::");
+        scanf("%s", s[i].username);
+        printf("Enter password::");
+        scanf("%d",&s[i].password);
+        printf("Enter age::");
+        scanf("%d",&s[i].age);
+        printf("Enter amount::");
+        scanf("%d", &s[i].amount);
+        printf("Enter location::");
+        scanf("%s",&s[i].location);
+    }
+    fclose(fptr);
+
+}
+void find(){
+    member s1;
+
+
+    FILE *fptr;
+    fptr=fopen("memberrecord.txt","r");
+    printf("Enter id to search");
+    scanf("%d",&id);
+    if(s1.id == id){
+
+
+    printf("%d 5%s%d 5%d %d%s",s1[i].id,s1[i].username,s1[i].password,s1[i].age,s1[i].amount,s1[i].location);
+    printf("Found!!");
+    }else{
+        printf("Cannot found!!");
+    }
+    fclose(fptr);
+}
+void update(){
+
+    member s1;
+
+
+    FILE *fptr,*fptr1;
+    fptr=fopen("memberrecord.txt","r");
+    fptr1=fopen("secondrecord.txt","w");
+    printf("Enter id to update");
+    scanf("%d",&id);
+    if(s1.id == id){
+
+        printf("Enter new username::");
+        scanf("%s", s1[i].username);
+        printf("Enter new password::");
+        scanf("%d",&s1[i].password);
+        printf("Enter new age::");
+        scanf("%d",&s1[i].age);
+        printf("Enter new amount::");
+        scanf("%d", &s1[i].amount);
+        printf("Enter new location::");
+        scanf("%s",&s1[i].location);
+    fptr1=fopen("secondrecord.txt","r");
+    fptr=fopen("memberrecord.txt","w");
+
+    printf("%d 5%s%d 5%d %d%s",s1[i].id,s1[i].username,s1[i].password,s1[i].age,s1[i].amount,s1[i].location);
+    printf("Found!!");
+
+
+     fclose(fptr);
+     fclose(fptr1);
+    }else{
+        printf("Cannot found!!");
+    }
+
+
+
+int main(){
+
+
+
+
+
+
+    int choice;
+    do{
+        printf("Press 1 to insert \n");
+        printf("Press 2 to find \n");
+        printf("Press 3 to update \n");
+         printf("Press 0 to exit\n");
+        printf("Enter your opinion\n");
+
+        scanf("%d",&choice);
+    switch (choice){
+
+                 case 1:
+                      insert();
+                      break;
+                 case 2:
+                      find();
+                      break;
+                 case 3:
+                      update();
+                      break;
+
+    }
+
+    } while(choice !=0);
+
+
+
+
+
+    return 0;
+}
+
